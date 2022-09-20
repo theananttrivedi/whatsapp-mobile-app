@@ -44,7 +44,7 @@
         class="app__navbar__lower border-none w-full items-end pb-2 bg-green-800 z-10 h-14 flex justify-between text-green-200 font-bold sticky top-0"
       >
         <div class="content flex justify-between w-full pl-2 pr-6 items-end">
-          <div class="camera pb-1">
+          <div class="camera flex items-center justify-start w-1/5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -57,9 +57,29 @@
             </svg>
           </div>
 
-          <p>CHATS</p>
-          <p>STATUS</p>
-          <p>CALLS</p>
+          <div class="text w-4/5 flex justify-between" x-data="{activen:0}">
+            <p
+              @click="activen=0"
+              :class="activen===0 ? 'active' : ''"
+              class="w-1/4 mx-2"
+            >
+              CHATS
+            </p>
+            <p
+              @click="activen=1"
+              :class="activen===1 ? 'active' : ''"
+              class="w-1/4"
+            >
+              STATUS
+            </p>
+            <p
+              @click="activen=2"
+              :class="activen===2 ? 'active' : ''"
+              class="w-1/4"
+            >
+              CALLS
+            </p>
+          </div>
         </div>
       </div>
 
